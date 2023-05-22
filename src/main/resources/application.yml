@@ -32,12 +32,13 @@ spring:
       load-balance-algorithm-type: round_robin #轮询
       # 最终的数据源名称
       name: dataSource
-      # 主库数据源名称  哪个是主库，哪个是从库是在这里配置的，和上述的数据潮名字没关系
+      # 主库数据源名称  设置哪个是主库，和上述的数据潮名字没关系
       master-data-source-name: master
-      # 从库数据源名称列表，多个逗号分隔
+      # 从库数据源名称列表，设置那个是从库，多个从库的话使用逗号分隔
       slave-data-source-names: slave
     props:
       sql:
         show: true #开启SQL显示，默认false
   main:
+    #该配置项的目的,就是如果当前项目中存在同名的bean,后定义的bean会覆盖先定义的。
     allow-bean-definition-overriding: true
